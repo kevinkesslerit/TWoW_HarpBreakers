@@ -24,7 +24,7 @@ if client_folder:
     print(f"Folder found at: {client_folder}")
 
     script_directory = pathlib.Path(__file__).parent
-    addon_list = ['assets\\pfQuest', 'assets\\pfQuest-turtle', 'assets\\TWThreat', 'assets\\ShaguDPS']
+    addon_list = ['assets\\pfQuest', 'assets\\pfQuest-turtle', 'assets\\TWThreat', 'assets\\ShaguDPS', 'assets\\AtlasLoot', 'assets\\Cartographer']
 
     for addon in addon_list:
         folder_to_copy = script_directory / pathlib.Path(addon)
