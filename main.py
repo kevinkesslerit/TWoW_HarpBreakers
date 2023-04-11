@@ -2,13 +2,16 @@ import os
 import pathlib
 from shutil import copytree
 
+print("Please wait, searching C: drive for Turtle WoW...")
+
 
 def find_folder(start_path, folder_name):
-    excluded_dirs = ['Windows', 'ProgramData', 'AMD', 'boot', 'DRIVERS', 'PerfLogs', 'WinPE_amd64', 'XboxGames']
+    excluded_dirs = ['Windows', 'ProgramData', 'AMD', 'boot', 'DRIVERS', 'PerfLogs', 'WinPE_amd64', 'XboxGames',
+                     'AppData', '.vscode', '.nuget', 'Microsoft SDKs', 'Windows Kits']
 
     for root, dirs, _ in os.walk(start_path):
         dirs[:] = [d for d in dirs if d not in excluded_dirs]
-
+        print(root)
         for directory in dirs:
             if folder_name in directory:
                 return pathlib.Path(root) / directory
@@ -39,3 +42,5 @@ if client_folder:
             print(f"Directory '{folder_to_copy}' not found.")
 else:
     print(f"Folder containing '{target_folder_name}' not found.")
+
+input("Done")
